@@ -10,6 +10,8 @@ try:
 except ImportError:
     from distutils.core import setup
 
+packages = ['procinfo']
+
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist upload")
     sys.exit()
@@ -23,6 +25,7 @@ setup(
     long_description=open('README.rst', 'r').read(),
     author='kracekumar',
     author_email='me@kracekumar.com',
+    packages=packages,
     install_requires=requires,
     license=open('LICENSE', 'r').read(),
     classifiers=(
